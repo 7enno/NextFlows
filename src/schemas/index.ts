@@ -24,3 +24,19 @@ export const getFaqInputSchema = z.object({
         .max(100)
         .describe("The specific topic or concept to retrieve the standard answer for.")
 });
+
+export const readDocumentContentInputSchema = z.object({
+    filename: z
+        .string()
+        .min(1)
+        .max(100)
+        .describe("The name of the file to read, including the extension (e.g., 'midterm-notes.md').")
+});
+
+export const getDocumentMetadataInputSchema = z.object({
+    filename: z
+        .string()
+        .min(1)
+        .max(100)
+        .describe("The name of the file to get metadata for, including the extension (e.g., 'midterm-notes.md').")
+});
