@@ -1,0 +1,8 @@
+# Dependency directories
+node_modules/
+
+# Visual Studio cache
+.vs/
+
+# Compiled JavaScript files
+src/**/*.js
