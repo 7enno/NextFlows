@@ -4,7 +4,7 @@ export function registerGetMetadataTool(server: any) {
     server.registerTool(
         "get_document_metadata",
         {
-            description: "Provides file information such as size and last modified date.",
+            description: "Retrieves file metadata, including size and last modified date.",
             inputSchema: getDocumentMetadataInputSchema,
         },
         async (input: any) => {

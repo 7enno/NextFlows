@@ -4,7 +4,7 @@ export function registerSearchNotesTool(server: any) {
     server.registerTool(
         "search_notes",
         {
-            description: "Searches local files for specific text matches or keywords.",
+            description: "Searches local files for specific text matches.",
             inputSchema: searchNotesInputSchema,
         },
         async (input: any) => {

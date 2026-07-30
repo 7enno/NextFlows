@@ -33,3 +33,12 @@ Computer Engineering students generate a massive volume of dense, technical docu
     *   **Mitigation:** Write strict system prompts within the tool descriptions explicitly commanding the model to state "I don't know" if the context isn't found in the tool output.
 2.  **Risk:** Large text files exceed the token context window when returned by the search tool.
     *   **Mitigation:** Implement a character limit on the returned snippets in the `search_notes` tool, forcing it to return surrounding context lines rather than whole documents.
+
+
+
+## Notes from reading the official GitHub MCP Server
+*   **Naming Patterns:** Tool names strictly follow a `verb_noun` snake_case convention (e.g., `get_issue`, `search_repositories`), making the exact action instantly predictable.
+*   **Description Length:** Descriptions are incredibly concise, usually restricted to a single, direct sentence that starts with an active verb (e.g., "Creates a new issue in a GitHub repository").
+*   **Parameter Detail:** Input schema descriptions are highly specific about formatting, often including exact examples of what the string should look like to prevent LLM hallucinations (e.g., "The repository name in owner/repo format").
+*   **Error Phrasing:** While not always in the tool description, standard MCP error handling focuses on actionable fixes rather than generic failures, explicitly stating which field was malformed.
+*   **Scope Isolation:** Tools are narrowly scoped to perform exactly one task well, rather than bundling multiple capabilities (e.g., reading a file and searching a file are two distinct tools).
