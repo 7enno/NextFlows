@@ -1,14 +1,15 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { readDocumentContentInputSchema } from "../schemas/index.js";
 
-export function registerReadDocumentTool(server: McpServer) {
-    server.tool(
+export function registerReadDocumentTool(server: any) {
+    server.registerTool(
         "read_document_content",
-        "Retrieves the full text content of a specific file.",
-        readDocumentContentInputSchema.shape,
-        async ({ filename }) => {
+        {
+            description: "Retrieves the full text content of a specific file.",
+            inputSchema: readDocumentContentInputSchema,
+        },
+        async (input: any) => {
             return {
-                content: [{ type: "text", text: `Stub: retrieving full content for "${filename}"...` }]
+                content: [{ type: "text", text: "not implemented yet" }],
             };
         }
     );

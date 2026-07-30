@@ -1,5 +1,5 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { McpServer } from "@modelcontextprotocol/server";
+import { serveStdio } from "@modelcontextprotocol/server/stdio";
 
 // Import your P0 tools
 import { registerSearchNotesTool } from "./tools/search-notes.js";
@@ -10,24 +10,20 @@ import { registerGetFaqTool } from "./tools/get-faq.js";
 import { registerReadDocumentTool } from "./tools/read-document.js";
 import { registerGetMetadataTool } from "./tools/get-metadata.js";
 
-const server = new McpServer({
-    name: "Notes-FAQ-Search",
-    version: "1.0.0",
-});
+function createServer(): McpServer {
+    const server = new McpServer({
+        name: "NextFlows",
+        version: "0.2.0",
+    });
 
-// Register P0 tools
-registerSearchNotesTool(server);
-registerListDocumentsTool(server);
-registerGetFaqTool(server);
+    registerSearchNotesTool(server);
+    registerListDocumentsTool(server);
+    registerGetFaqTool(server);
+    registerReadDocumentTool(server);
+    registerGetMetadataTool(server);
 
-// Register P1 tools
-registerReadDocumentTool(server);
-registerGetMetadataTool(server);
-
-async function main() {
-    const transport = new StdioServerTransport();
-    await server.connect(transport);
-    console.error("Notes & FAQ Search MCP Server running on stdio");
+    return server;
 }
 
-main().catch(console.error);
+void serveStdio(createServer);
+console.error("NextFlows MCP server running on stdio");

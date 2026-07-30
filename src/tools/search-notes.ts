@@ -1,14 +1,18 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { searchNotesInputSchema } from "../schemas/index.js";
 
-export function registerSearchNotesTool(server: McpServer) {
-    server.tool(
+export function registerSearchNotesTool(server: any) {
+    server.registerTool(
         "search_notes",
-        "Searches local files for specific text matches or keywords.",
-        searchNotesInputSchema.shape,
-        async ({ query, limit }) => {
+        {
+            description: "Searches local files for specific text matches or keywords.",
+            inputSchema: searchNotesInputSchema,
+        },
+        async (input: any) => {
             return {
-                content: [{ type: "text", text: `Stub: searching for "${query}" with limit ${limit || 5}...` }]
+                content: [{
+                    type: "text",
+                    text: JSON.stringify({ ok: true, stub: true, tool: "search_notes" }, null, 2),
+                }],
             };
         }
     );

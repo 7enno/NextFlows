@@ -23,3 +23,8 @@ cd HananAlawdaRepository
 
 NextFlows Academy Official Website:
 https://nextflows.ai/
+
+## Week 2: Development
+To run the development server, execute the following command:
+`npm run dev`
+This will start the server using `tsx` and listen on stdio.

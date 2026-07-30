@@ -1,14 +1,15 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { getDocumentMetadataInputSchema } from "../schemas/index.js";
 
-export function registerGetMetadataTool(server: McpServer) {
-    server.tool(
+export function registerGetMetadataTool(server: any) {
+    server.registerTool(
         "get_document_metadata",
-        "Provides file information such as size and last modified date.",
-        getDocumentMetadataInputSchema.shape,
-        async ({ filename }) => {
+        {
+            description: "Provides file information such as size and last modified date.",
+            inputSchema: getDocumentMetadataInputSchema,
+        },
+        async (input: any) => {
             return {
-                content: [{ type: "text", text: `Stub: retrieving metadata (size, date) for "${filename}"...` }]
+                content: [{ type: "text", text: "not implemented yet" }],
             };
         }
     );

@@ -1,14 +1,18 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { listDocumentsInputSchema } from "../schemas/index.js";
 
-export function registerListDocumentsTool(server: McpServer) {
-    server.tool(
+export function registerListDocumentsTool(server: any) {
+    server.registerTool(
         "list_documents",
-        "Lists all available text/markdown files in the knowledge base directory.",
-        listDocumentsInputSchema.shape,
-        async () => {
+        {
+            description: "Lists all available text/markdown files in the knowledge base directory.",
+            inputSchema: listDocumentsInputSchema,
+        },
+        async (input: any) => {
             return {
-                content: [{ type: "text", text: "Stub: returning list of files..." }]
+                content: [{
+                    type: "text",
+                    text: JSON.stringify({ ok: true, stub: true, tool: "list_documents" }, null, 2),
+                }],
             };
         }
     );

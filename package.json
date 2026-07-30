@@ -1,5 +1,9 @@
 {
     "type": "module",
+    "scripts": {
+        "dev": "tsx src/index.ts",
+        "build": "tsc"
+    },
     "dependencies": {
         "@modelcontextprotocol/sdk": "^1.29.0",
         "@modelcontextprotocol/server": "^2.0.0-beta.5",
