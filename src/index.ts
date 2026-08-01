@@ -1,14 +1,13 @@
 import { McpServer } from "@modelcontextprotocol/server";
 import { serveStdio } from "@modelcontextprotocol/server/stdio";
 
-// Import your P0 tools
-import { registerSearchNotesTool } from "./tools/search-notes.js";
-import { registerListDocumentsTool } from "./tools/list-documents.js";
-import { registerGetFaqTool } from "./tools/get-faq.js";
+import { registerSearchNotesTool } from "./tools/search_notes.js";
+import { registerListDocumentsTool } from "./tools/list_documents.js";
+import { registerGetFaqTool } from "./tools/get_faq.js";
 
-// Import your P1 tools
-import { registerReadDocumentTool } from "./tools/read-document.js";
-import { registerGetMetadataTool } from "./tools/get-metadata.js";
+import { registerReadDocumentTool } from "./tools/read_document.js";
+import { registerGetMetadataTool } from "./tools/get_metadata.js";
+
 
 function createServer(): McpServer {
     const server = new McpServer({
