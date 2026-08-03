@@ -4,24 +4,14 @@ import { safeReadFile } from "../lib/file.js";
 const faqSchema = z.record(z.string(), z.string());
 
 export function registerGetFaqTool(server: any) {
-    server.registerTool(
+    server.tool(
         "get_faq",
+        "Retrieve an answer from the FAQ database.",
         {
-            description: "Retrieve an answer from the FAQ database.",
-            inputSchema: {
-                type: "object",
-                properties: {
-                    questionKey: {
-                        type: "string",
-                        description: "The specific keyword or topic to look up in the FAQ (e.g., 'midterms')."
-                    }
-                },
-                required: ["questionKey"]
-            }
+           
+            questionKey: z.string().describe("The specific keyword or topic to look up in the FAQ (e.g., 'midterms').")
         },
-        async (input: any) => {
-            const questionKey = input.questionKey;
-
+        async ({ questionKey }: { questionKey: string }) => {
             try {
                 const rawData = await safeReadFile('faq.json');
                 const parsedJson = JSON.parse(rawData);
@@ -41,8 +31,7 @@ export function registerGetFaqTool(server: any) {
                 };
 
             } catch (error) {
-                console.error(`[get_faq tool failed]:`, error instanceof Error ? error.message : String(error));
-
+                
                 return {
                     content: [{ type: "text", text: "The FAQ file could not be accessed or parsed correctly." }],
                     isError: true
