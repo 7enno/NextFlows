@@ -1,0 +1,2 @@
+# Computer Architecture Notes
+The five-stage MIPS pipeline consists of Instruction Fetch (IF), Instruction Decode (ID), Execute (EX), Memory Access (MEM), and Write Back (WB). Control hazards can be resolved using branch prediction.

@@ -1,0 +1,16 @@
+{
+    "type": "module",
+    "scripts": {
+        "dev": "tsx src/index.ts",
+        "build": "tsc"
+    },
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.29.0",
+        "@modelcontextprotocol/server": "^2.0.0",
+        "typescript": "^7.0.2",
+        "zod": "^4.4.3"
+    },
+    "devDependencies": {
+        "@types/node": "^26.1.2"
+    }
+}

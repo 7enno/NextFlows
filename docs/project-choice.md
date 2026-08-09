@@ -1,0 +1,1 @@
+I am building a Notes & FAQ Search MCP server for local text files so that an AI engine can instantly retrieve and synthesize answers directly from my own study materials. 
