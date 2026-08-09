@@ -5,38 +5,38 @@ export const listDocumentsInputSchema = z.object({});
 export const searchNotesInputSchema = z.object({
     query: z
         .string()
-        .min(1)
-        .max(150)
-        .describe("The exact text, n-gram, or keyword to search for across local notes and study materials."),
+        .min(1, "Query cannot be empty")
+        .max(100, "Query is too long")
+        .describe("The exact keyword or phrase to search for across local notes."),
     limit: z
         .number()
         .int()
         .positive()
-        .max(20)
+        .max(10, "Limit cannot exceed 10 items")
         .optional()
-        .describe("Maximum number of matching text snippets to return. Defaults to 5.")
+        .describe("Maximum number of matching snippets to return.")
 });
 
 export const getFaqInputSchema = z.object({
-    topic: z
+    questionKey: z
         .string()
-        .min(2)
-        .max(100)
-        .describe("The specific topic or concept to retrieve the standard answer for.")
+        .min(1, "Question key cannot be empty")
+        .max(50, "Key is too long")
+        .describe("The specific keyword or topic to look up in the FAQ.")
 });
 
 export const readDocumentContentInputSchema = z.object({
-    filename: z
+    fileName: z
         .string()
-        .min(1)
-        .max(100)
-        .describe("The name of the file to read, including the extension (e.g., 'midterm-notes.md').")
+        .min(1, "Filename cannot be empty")
+        .max(100, "Filename is too long")
+        .describe("The exact name of the file to read (e.g., 'architecture_notes.md')")
 });
 
 export const getDocumentMetadataInputSchema = z.object({
-    filename: z
+    fileName: z
         .string()
-        .min(1)
-        .max(100)
-        .describe("The name of the file to get metadata for, including the extension (e.g., 'midterm-notes.md').")
+        .min(1, "Filename cannot be empty")
+        .max(100, "Filename is too long")
+        .describe("The name of the file to get metadata for.")
 });

@@ -1,10 +1,9 @@
 import { safeReadFile } from '../lib/file.js';
+import { getDocumentMetadataInputSchema } from '../schemas/index.js';
 import { z } from 'zod';
 const metadataSchema = z.record(z.string(), z.any());
 export function registerGetMetadataTool(server) {
-    server.tool("get_metadata", "Retrieve metadata (like author, date, tags) for a specific document.", {
-        fileName: z.string().describe("The name of the file to get metadata for (e.g., 'architecture_notes.md')")
-    }, async ({ fileName }) => {
+    server.tool("get_metadata", "Retrieve metadata (like author, date, tags) for a specific document.", getDocumentMetadataInputSchema.shape, async ({ fileName }) => {
         try {
             const rawData = await safeReadFile('metadata.json');
             const parsedJson = JSON.parse(rawData);
@@ -21,7 +20,7 @@ export function registerGetMetadataTool(server) {
         }
         catch (error) {
             return {
-                content: [{ type: "text", text: "The metadata file could not be accessed or parsed correctly." }],
+                content: [{ type: "text", text: `The metadata file could not be accessed or parsed correctly: ${error.message || ""}` }],
                 isError: true
             };
         }

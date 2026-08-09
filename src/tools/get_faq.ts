@@ -1,5 +1,6 @@
-import { z } from "zod";
 import { safeReadFile } from "../lib/file.js";
+import { getFaqInputSchema } from "../schemas/index.js";
+import { z } from "zod";
 
 const faqSchema = z.record(z.string(), z.string());
 
@@ -7,10 +8,7 @@ export function registerGetFaqTool(server: any) {
     server.tool(
         "get_faq",
         "Retrieve an answer from the FAQ database.",
-        {
-           
-            questionKey: z.string().describe("The specific keyword or topic to look up in the FAQ (e.g., 'midterms').")
-        },
+        getFaqInputSchema.shape,
         async ({ questionKey }: { questionKey: string }) => {
             try {
                 const rawData = await safeReadFile('faq.json');
@@ -30,10 +28,9 @@ export function registerGetFaqTool(server: any) {
                     content: [{ type: "text", text: JSON.stringify({ answer }) }]
                 };
 
-            } catch (error) {
-                
+            } catch (error: any) {
                 return {
-                    content: [{ type: "text", text: "The FAQ file could not be accessed or parsed correctly." }],
+                    content: [{ type: "text", text: `The FAQ file could not be accessed or parsed correctly: ${error.message || ""}` }],
                     isError: true
                 };
             }

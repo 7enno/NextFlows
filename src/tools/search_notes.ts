@@ -1,17 +1,14 @@
-import fs from 'fs/promises';
+﻿import fs from 'fs/promises';
 import path from 'path';
-import { z } from 'zod'; 
 import { safeReadFile } from '../lib/file.js';
+import { searchNotesInputSchema } from '../schemas/index.js'; 
 
 export function registerSearchNotesTool(server: any) {
     server.tool(
         "search_notes",
         "Searches local markdown files for specific text matches.",
-        {
-           
-            query: z.string().describe("The keyword or phrase to search for inside the notes.")
-        },
-        async ({ query }: { query: string }) => {
+        searchNotesInputSchema.shape, 
+        async ({ query, limit = 5 }: { query: string; limit?: number }) => {
             const queryLower = query.toLowerCase();
 
             try {
@@ -37,6 +34,10 @@ export function registerSearchNotesTool(server: any) {
                         const snippet = content.substring(snippetStartIndex, snippetStartIndex + 100).replace(/\n/g, ' ') + '...';
 
                         matches.push({ file, snippet });
+
+                        if (matches.length >= limit) {
+                            break;
+                        }
                     }
                 }
 
@@ -47,13 +48,12 @@ export function registerSearchNotesTool(server: any) {
                 }
 
                 return {
-                    content: [{ type: "text", text: JSON.stringify({ matches }) }]
+                    content: [{ type: "text", text: JSON.stringify({ matches, truncated: matches.length >= limit }) }]
                 };
 
-            } catch (error) {
-                
+            } catch (error: any) {
                 return {
-                    content: [{ type: "text", text: "An error occurred while searching the local notes." }],
+                    content: [{ type: "text", text: `An error occurred while searching: ${error.message || "Unknown error"}` }],
                     isError: true
                 };
             }
