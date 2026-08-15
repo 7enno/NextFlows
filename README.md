@@ -10,6 +10,6 @@ NextFlows is a Model Context Protocol (MCP) server designed to securely manage, 
 ## Install
 Clone the repository and install the dependencies:
 ```bash
-git clone [https://github.com/7enno/NextFlows.git](https://github.com/7enno/NextFlows.git)
+git clone https://github.com/7enno/NextFlows.git
 cd NextFlows
 npm install
