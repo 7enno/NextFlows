@@ -2,7 +2,8 @@
     "type": "module",
     "scripts": {
         "dev": "tsx src/index.ts",
-        "build": "tsc"
+        "build": "tsc",
+        "test": "node --import tsx --test src/**/*.test.ts"
     },
     "dependencies": {
         "@modelcontextprotocol/sdk": "^1.29.0",
