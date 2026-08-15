@@ -1,30 +1,15 @@
-# NextFlows - Week 1 - What is MCP?
+# NextFlows MCP Server
 
-## Description
-This repository contains my Week 1 submission for the NextFlows Academy MCP course.
+## What It Does
+NextFlows is a Model Context Protocol (MCP) server designed to securely manage, list, read, and search project documents and notes directly from your AI client environment with built-in security protections.
 
-## How to Access
+## Requirements
+* **Node.js** (v18 or higher recommended)
+* **npm** or **pnpm**
 
-1. Clone the repository:
-
+## Install
+Clone the repository and install the dependencies:
 ```bash
-git clone https://github.com/7enno/HananAlawdaRepository.git
-```
-
-2. Navigate to the repository:
-
-```bash
-cd HananAlawdaRepository
-```
-
-3. Open the `README.md` file to view the Week 1 submission.
-
-## Academy
-
-NextFlows Academy Official Website:
-https://nextflows.ai/
-
-## Week 2: Development
-To run the development server, execute the following command:
-`npm run dev`
-This will start the server using `tsx` and listen on stdio.
+git clone [https://github.com/7enno/NextFlows.git](https://github.com/7enno/NextFlows.git)
+cd NextFlows
+npm install

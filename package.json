@@ -3,6 +3,7 @@
     "scripts": {
         "dev": "tsx src/index.ts",
         "build": "tsc",
+        "start": "npx tsx src/index.ts",
         "test": "node --import tsx --test src/**/*.test.ts"
     },
     "dependencies": {
