@@ -2,7 +2,7 @@
 
 | id | tool | setup | input | expected | result | evidence |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **TC01** | `list_documents` | Ensure `data/` directory contains markdown files. | `{}` | Returns a JSON array listing all available `.md` documents successfully. | **PASS** | `docs/screenshots/happy-path.png` |
+| **TC01** | `list_documents` | Ensure `data/` directory contains markdown files. | `{}` | Returns a JSON array listing all available `.md` documents successfully. | **PASS** | [View Screenshot](screenshots/1.png) |
 | **TC02** | `read_document` | Ensure `architecture_notes.md` exists in the data directory. | `{"fileName": "architecture_notes.md"}` | Returns the exact file name and full markdown content. | **PASS** | `docs/screenshots/happy-path.png` |
 | **TC03** | `search_notes` | Ensure data files contain searchable text. | `{"query": "MIPS"}` | Returns matching files and relevant snippets containing the keyword. | **PASS** | Verified via Inspector |
 | **TC04** | `read_document` |Test strict schema validation with invalid payload parameters or missing required fields.| `{"wrongField": 123}` | Fails Zod schema validation and returns an error response.| **PASS** | `docs/screenshots/validation-rejection.png` |
