@@ -13,3 +13,4 @@ Clone the repository and install the dependencies:
 git clone [https://github.com/7enno/NextFlows.git](https://github.com/7enno/NextFlows.git)
 cd NextFlows
 npm install
+- Check out our [Example Conversations](examples/conversations.md) to see how users interact with the server.
