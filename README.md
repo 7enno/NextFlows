@@ -25,7 +25,7 @@ cd NextFlows
 npm install
 
 
-## Run
+---
 To build and run the server locally:
 ```bash
 npm run build
