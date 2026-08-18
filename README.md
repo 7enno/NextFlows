@@ -57,3 +57,20 @@ You can use these plain-language prompts when interacting with the server:
    * *Fix:* Ensure you are running commands from the root directory of the repository, and check that absolute paths in configurations use double backslashes (`\\`) on Windows.
 3. **Error: Tool calls return empty or file not found**
    * *Fix:* Verify that your local workspace fixture files or data directories exist in the repository root and are accessible.
+
+---
+
+## Connect to Claude Desktop
+
+To use NextFlows as a local MCP server in Claude Desktop, add the following configuration to your `claude_desktop_config.json` file:
+
+**Windows:**
+```json
+{
+  
+    "mcpServers": {
+        "NextFlows": {
+            "command": "C:\\Users\\97059\\OneDrive\\Desktop\\7enno\\NextFlows\\start-mcp.cmd"
+        }
+    }
+}
