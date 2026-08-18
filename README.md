@@ -15,18 +15,17 @@ NextFlows provides a secure and structured bridge between your local workspace a
 * **Claude Desktop** (optional for production testing) or the **MCP Inspector** (for development).
 
 ---
-
+```
 ## Install
 Clone the repository and install the required dependencies:
 
 ```bash
 git clone [https://github.com/7enno/NextFlows.git](https://github.com/7enno/NextFlows.git)
 cd NextFlows
-npm install
+npm install 
 
+---
 
-
-To build and run the server locally:
 ```bash
 npm run build
 npm start
