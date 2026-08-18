@@ -15,7 +15,7 @@ NextFlows provides a secure and structured bridge between your local workspace a
 * **Claude Desktop** (optional for production testing) or the **MCP Inspector** (for development).
 
 ---
-```
+
 ## Install
 Clone the repository and install the required dependencies:
 
