@@ -19,14 +19,14 @@ NextFlows provides a secure and structured bridge between your local workspace a
 ## Install
 Clone the repository and install the required dependencies:
 
-```bash
+
 git clone [https://github.com/7enno/NextFlows.git](https://github.com/7enno/NextFlows.git)
 cd NextFlows
 npm install 
 
 ---
+## To build and run the server locally:
 
-```bash
 npm run build
 npm start
 
