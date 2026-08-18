@@ -35,6 +35,7 @@ npm start
 To test and debug your tools interactively using the official MCP Inspector, run:
 ```bash
 npx @modelcontextprotocol/inspector npx tsx src/index.ts
+```
 
 ## Tools Overview
 | Tool Name | Description | Key Arguments |
