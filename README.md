@@ -24,6 +24,7 @@ git clone [https://github.com/7enno/NextFlows.git](https://github.com/7enno/Next
 cd NextFlows
 npm install
 
+
 ## Run
 To build and run the server locally:
 ```bash
