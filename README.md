@@ -23,12 +23,13 @@ Clone the repository and install the required dependencies:
 git clone [https://github.com/7enno/NextFlows.git](https://github.com/7enno/NextFlows.git)
 cd NextFlows
 npm install 
-
+```
 ---
 ## To build and run the server locally:
-
+```bash
 npm run build
 npm start
+```
 
 ## The Inspector Command
 To test and debug your tools interactively using the official MCP Inspector, run:
