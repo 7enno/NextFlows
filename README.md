@@ -41,14 +41,14 @@ npx @modelcontextprotocol/inspector npx tsx src/index.ts
 | Tool Name | Description | Key Arguments |
 | :--- | :--- | :--- |
 | `search_notes` | Searches through local workspace notes for matching queries. | `query` (string) |
-| `get_faq` | Retrieves answers to common project questions and FAQs. | `topic` (string) |
+| `list_documents` | Lists all available documentation files in the project workspace.| NONE |
 | `read_document` | Reads and returns the contents of specific project documentation paths. | `path` (string) |
 
 ## Example Prompts
 You can use these plain-language prompts when interacting with the server:
-* "Can you search my notes for anything related to authentication setup?"
-* "How do I reset my API key according to the project documentation?"
-* "Can you read the contents of the deployment guidelines document for me?"
+* "Can you search my notes for anything related to architecture?"
+* "Can you list all the available documents or files in the system?"
+* "Can you read the content of the main architecture or configuration document for me?"
 
 ## Troubleshooting (Common Errors)
 1. **Error: `npx: command not found` (Windows)**
