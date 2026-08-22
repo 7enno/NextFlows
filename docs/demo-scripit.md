@@ -1,6 +1,6 @@
 ﻿# NextFlows MCP Server - Demo Script (5-Minute Hard Timebox)
 
-## ⏱️ Timed Beats & Outline
+##  Timed Beats & Outline
 
 ### 1. The Problem (0:00 – 0:40)
 - **Hook:** AI models are powerful, but they are isolated silos when it comes to private local workspace files, documentation, and specific team notes.
