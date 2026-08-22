@@ -76,6 +76,7 @@ To use NextFlows as a local MCP server in Claude Desktop, add the following conf
         }
     }
 }
+```
 
 ##License
 Copyright (c) 2026 Hanan Alawawda.
