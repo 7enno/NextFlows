@@ -25,19 +25,21 @@ cd NextFlows
 npm install 
 ```
 ---
-## To build and run the server locally:
+## Run 
+To build and run the server locally:
 ```bash
 npm run build
 npm start
 ```
 
-## The Inspector Command
+## Inspector 
+The Inspector Command
 To test and debug your tools interactively using the official MCP Inspector, run:
 ```bash
 npx @modelcontextprotocol/inspector npx tsx src/index.ts
 ```
 
-## Tools Overview
+## Tools 
 | Tool Name | Description | Key Arguments |
 | :--- | :--- | :--- |
 | `search_notes` | Searches through local workspace notes for matching queries. | `query` (string) |
