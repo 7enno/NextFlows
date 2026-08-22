@@ -1,6 +1,7 @@
 # Dependency directories
 node_modules/
-
+dist/
+build/
 # Visual Studio cache
 .vs/
 
@@ -13,3 +14,6 @@ src/**/*.js
 .env.*
 *.key
 *.pem
+.DS_Store
+Thumbs.db
+*.log

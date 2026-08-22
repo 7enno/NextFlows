@@ -1,3 +1,19 @@
-{
-    "topic": "midterms"
+ {
+    "topic": [
+        {
+            "questionKey": "server_setup",
+            "question": "How do I start the NextFlows MCP server?",
+            "answer": "You can start the server using the custom batch script 'start_mcp.cmd' which points to the project folder and runs npx tsx src/index.ts."
+        },
+        {
+            "questionKey": "tools_list",
+            "question": "What tools are available in this server?",
+            "answer": "The available tools are search_notes, read_document, list_documents, get_faq, and get_documentmetadata."
+        },
+        {
+            "questionKey": "security_model",
+            "question": "Is the server secure?",
+            "answer": "Yes, it uses a local-first Stdio transport protocol with strict path isolation and schema validation, meaning no data leaves your local environment."
+        }
+    ]
 }
