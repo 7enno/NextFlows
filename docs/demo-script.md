@@ -26,3 +26,5 @@
 
 ### 5. Q&A Session (4:30 – 5:00)
 - Open the floor for final reviewer questions and wrap up.
+
+**Slides Link:** [Download Project Slides (PDF)](https://github.com/7enno/NextFlows/blob/main/docs/Presentation.pdf)

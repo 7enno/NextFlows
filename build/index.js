@@ -64,6 +64,40 @@ function createServer() {
             return { content: [{ type: "text", text: "Search failed." }], isError: true };
         }
     });
+    // 4. New Tool: add_note
+    server.registerTool("add_note", {
+        description: "Create and save a new markdown note in the data directory.",
+        inputSchema: z.object({
+            fileName: z.string().describe("The filename for the new note (e.g., note.md)"),
+            content: z.string().describe("The markdown content of the note")
+        })
+    }, async (input) => {
+        try {
+            const fileName = input.fileName.endsWith('.md') ? input.fileName : `${input.fileName}.md`;
+            const filePath = path.join(dataDir, fileName);
+            await fs.writeFile(filePath, input.content, 'utf-8');
+            return { content: [{ type: "text", text: JSON.stringify({ success: true, fileName, message: "Note created successfully." }) }] };
+        }
+        catch (error) {
+            return { content: [{ type: "text", text: "Failed to create note." }], isError: true };
+        }
+    });
+    // 5. New Tool: delete_note
+    server.registerTool("delete_note", {
+        description: "Delete an existing markdown note from the data directory.",
+        inputSchema: z.object({
+            fileName: z.string().describe("The exact name of the markdown file to delete")
+        })
+    }, async (input) => {
+        try {
+            const filePath = path.join(dataDir, input.fileName);
+            await fs.unlink(filePath);
+            return { content: [{ type: "text", text: JSON.stringify({ success: true, fileName: input.fileName, message: "Note deleted successfully." }) }] };
+        }
+        catch (error) {
+            return { content: [{ type: "text", text: `Could not delete file ${input.fileName}.` }], isError: true };
+        }
+    });
     // P1 Stubs
     server.registerTool("get_faq", { description: "Retrieve an answer from FAQ", inputSchema: z.object({ questionKey: z.string() }) }, async (input) => {
         const faqPath = path.join(dataDir, 'faq.json');

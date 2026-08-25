@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿# NextFlows - Final Reflection & Portfolio Blurb
+=======
+# NextFlows - Final Reflection & Portfolio Blurb
+>>>>>>> c663e34003ec43e4823b7aad41ac1a67508d8f24
 
 ## 1. Wins & Blockers
 - **Wins:** 
@@ -22,4 +26,8 @@
 > Check out the public repository and release (`v1.0.0`) on GitHub! #TypeScript #MCP #AI #OpenSource #NodeJS
 
 ## 4. Post-Cohort Improvement Idea
+<<<<<<< HEAD
 - If I continued developing NextFlows over the next two weeks, I would integrate **vector-based semantic search** (using local embeddings) alongside the current keyword-matching system to enable much smarter, context-aware document retrieval.
+=======
+- If I continued developing NextFlows over the next two weeks, I would integrate **vector-based semantic search** (using local embeddings) alongside the current keyword-matching system to enable much smarter, context-aware document retrieval.
+>>>>>>> c663e34003ec43e4823b7aad41ac1a67508d8f24
