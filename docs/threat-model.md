@@ -15,7 +15,7 @@ Treat all tool arguments coming from the model as untrusted input, exactly like 
 
 
 ## Assets
-* **Local Data Files:** Markdown notes (`architecture_notes.md`) and FAQ fixtures (`faq.json`) stored under `./data/`.
+* **Local Data Files:** Markdown notes (`architecture_notes.md`) stored under `./data/`.
 * **Filesystem Security:** The host machine's file system, which must remain strictly isolated from model instructions.
 * **API/Network:** External or internal network interfaces (no active API tokens or secrets are stored in the repository).
 
