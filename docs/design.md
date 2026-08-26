@@ -1,7 +1,7 @@
 # Design Document: Notes & FAQ Search MCP
 
 ## Pitch
-Computer Engineering students generate a massive volume of dense, technical documentation—from code snippets to lab reports—that becomes difficult to navigate over time. This Notes & FAQ Search server is designed for students and developers who need instant, context-aware answers directly from their local study materials. The MCP exposes standard directory reading, exact-match FAQ retrieval, and keyword-based text search tools, allowing an AI engine to act as a highly specialized academic assistant without relying on external web searches.
+Computer Engineering students generate a massive volume of dense, technical documentationâ€”from code snippets to lab reportsâ€”that becomes difficult to navigate over time. This Notes & FAQ Search server is designed for students and developers who need instant, context-aware answers directly from their local study materials. The MCP exposes standard directory reading, exact-match FAQ retrieval, and keyword-based text search tools, allowing an AI engine to act as a highly specialized academic assistant without relying on external web searches.
 
 ## User & Demo Story
 **User:** "How do forwarding rules eliminate data stalls in our MIPS pipeline lab?"
@@ -14,9 +14,9 @@ Computer Engineering students generate a massive volume of dense, technical docu
 | :--- | :--- | :--- | :--- | :--- |
 | `list_documents` | Lists all available text/markdown files in the knowledge base directory. | `None` | `Array<string>` (file paths) | P0 |
 | `search_notes` | Searches local files for specific text matches or keywords. | `query` (string) | `Array<Object>` (file path, matching snippet) | P0 |
-| `get_faq` | Retrieves the exact answer for a predefined, frequently asked question. | `topic` (string) | `string` (full answer text) | P0 |
+| `add_note` | Creates and saves a new markdown note in the data directory. | `fileName` (string), `content` (string) | `Object` (success, fileName, message) | P1 |
+| `delete_note` | Deletes an existing markdown note from the data directory. | `fileName` (string) | `Object` (success, fileName, message) | P1 |
 | `read_document_content` | Reads and returns the entire contents of a specific file. | `file_path` (string) | `string` (entire file content) | P1 |
-| `get_document_metadata` | Returns file size, last modified date, and word count. | `file_path` (string) | `Object` (size, modified_date, words) | P1 |
 
 ## Out of Scope
 *   **Authentication/Logins:** The server will run entirely locally on the host machine; no user management or API keys will be required.
