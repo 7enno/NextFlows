@@ -26,7 +26,7 @@ Treat all tool arguments coming from the model as untrusted input, exactly like 
 
 ## Top 5 Risks
 1. **Path Traversal in File Reading:** A model-controlled parameter could attempt to traverse directories using `../` to access files outside `./data/`.
-2. **Missing Input Validation (Zod Schema Failures):** Passing malformed, unexpected, or undefined types to P0 tools (`search_notes`, `get_faq`) could cause unhandled exceptions.
+2. **Missing Input Validation (Zod Schema Failures):** Passing malformed, unexpected, or undefined types to P0 tools (`search_notes`, `add_note`) could cause unhandled exceptions.
 3. **Runaway Responses / Large Context Flooding:** A broad search query could return an excessively large block of text, exhausting the model's context window.
 4. **Server Crash via Unhandled Exceptions:** Runtime errors inside tool handlers crashing the entire MCP server instance instead of failing gracefully.
 5. **SSRF (Server-Side Request Forgery):** If external data fetchers are unconstrained, a model-provided URL could target internal network resources.
