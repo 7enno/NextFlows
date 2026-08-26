@@ -24,7 +24,7 @@
 ## 2. Peer Review Feedback
 
 ### **What Worked:**
-* **P0 Tools Performance:** Successfully demonstrated live execution of the core P0 tools (`list_documents`, `read_document`, `search_notes`, and `get_faq`), showing stable and responsive behavior in the MCP Inspector.
+* **P0 Tools Performance:** Successfully demonstrated live execution of the core P0 tools (`list_documents`, `read_document`, `search_notes`, and `add_note`), showing stable and responsive behavior in the MCP Inspector.
 * **Input Validation & Security:** Strict Zod schemas were properly implemented with appropriate type checking and string length bounds.
 * **Attack Prevention:** Security hardening successfully blocked a path-traversal attempt (`../../etc/passwd`), returning a clean, safe, and user-friendly error message without exposing raw stack traces.
 
