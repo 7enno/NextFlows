@@ -12,12 +12,12 @@
 
 | Check Item | Status | Notes / Observations |
 | :--- | :---: | :--- |
-| **Schemas (Zod)** | ? Pass | Strict Zod input schemas implemented for all tools with type safety, min/max bounds, and descriptive error messages. |
-| **Error Handling** | ? Pass | Safe, clean, and user-friendly error messages implemented within `try/catch` blocks (no raw stack traces exposed). |
-| **Secrets & Config** | ? Pass | Environment variables properly configured and checked via `env.example`. No hardcoded secrets. |
+| **Schemas (Zod)** |  Pass | Strict Zod input schemas implemented for all tools with type safety, min/max bounds, and descriptive error messages. |
+| **Error Handling** |  Pass | Safe, clean, and user-friendly error messages implemented within `try/catch` blocks (no raw stack traces exposed). |
+| **Secrets & Config** | Pass | Environment variables properly configured and checked via `env.example`. No hardcoded secrets. |
 | **Data Allowlists / Paths** | ? Pass | Robust path traversal protection applied (safely joins data directory and prevents directory escape attacks). |
-| **README Draft** | ? Pass | README updated and descriptive of tool capabilities and local setup. |
-| **Demo Path** | ? Pass | Live demonstration of P0 tools and attack rejection executed successfully via MCP Inspector. |
+| **README Draft** |  Pass | README updated and descriptive of tool capabilities and local setup. |
+| **Demo Path** |  Pass | Live demonstration of P0 tools and attack rejection executed successfully via MCP Inspector. |
 
 ---
 
