@@ -12,8 +12,8 @@ Computer Engineering students generate a massive volume of dense, technical docu
 
 | tool_name | description | inputs | output (shape) | priority |
 | :--- | :--- | :--- | :--- | :--- |
-| `list_documents` | Lists all available text/markdown files in the knowledge base directory. | `None` | `Array<string>` (file paths) | P0 |
-| `search_notes` | Searches local files for specific text matches or keywords. | `query` (string) | `Array<Object>` (file path, matching snippet) | P0 |
+| `list_documents` | Lists all available text/markdown files in the knowledge base directory. | `None` | `Array<string>` (file paths) | P1 |
+| `search_notes` | Searches local files for specific text matches or keywords. | `query` (string) | `Array<Object>` (file path, matching snippet) | P1 |
 | `add_note` | Creates and saves a new markdown note in the data directory. | `fileName` (string), `content` (string) | `Object` (success, fileName, message) | P1 |
 | `delete_note` | Deletes an existing markdown note from the data directory. | `fileName` (string) | `Object` (success, fileName, message) | P1 |
 | `read_document_content` | Reads and returns the entire contents of a specific file. | `file_path` (string) | `string` (entire file content) | P1 |
